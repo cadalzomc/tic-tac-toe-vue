@@ -7,8 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from "vue"
-import Circle from "../icons/circle.vue"
+import Circle from "@/components/icons/Circle.vue"
 import X from "../icons/X.vue"
 
 const props = defineProps<{

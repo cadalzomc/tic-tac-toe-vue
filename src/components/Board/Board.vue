@@ -1,15 +1,18 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
 import { computed, ref, watchEffect } from "vue"
+import WinnerModal from "@/components/Modal/Result/Modal.Result.vue"
 import Square from "@/components/Square/Square.vue"
 import { CalculateWinner } from "@/lib/helper/CalculateWinner"
 import { useGameStore } from "@/stores/GameStores"
 
 import ButtonReset from "@/components/Buttons/Button.Reset.vue"
-import TicTacToe from "../icons/TicTacToe.vue"
+import TicTacToe from "@/components/icons/TicTacToe.vue"
 
 const gameStore = useGameStore()
 const currentPlayer = ref("X")
+const isModalOpen = ref(false)
+const result = ref("")
 const squares = ref(Array(9).fill(null))
 
 const ClickHandle = (index: number) => {
@@ -18,20 +21,35 @@ const ClickHandle = (index: number) => {
   currentPlayer.value = currentPlayer.value === "X" ? "O" : "X"
 }
 
+const CloseModal = () => {
+  isModalOpen.value = false
+  CLickResetHandle()
+  console.log(isModalOpen.value)
+}
+
 const CLickResetHandle = () => {
   squares.value = Array(9).fill(null)
 }
 
 const winnerExist = computed(() => CalculateWinner(squares.value))
+
 watchEffect(() => {
   const winner = CalculateWinner(squares.value)
-  if (winner?.toString().toUpperCase() === "X") {
-    gameStore.incrementXWins()
-  } else if (winner?.toString().toUpperCase() === "O") {
-    gameStore.incrementOWins()
-  } else if (squares.value.every((square) => square !== null)) {
-    gameStore.incrementDraw()
-  }
+  setTimeout(() => {
+    if (winner?.toString().toUpperCase() === "X") {
+      gameStore.incrementXWins()
+      isModalOpen.value = true
+      result.value = "X"
+    } else if (winner?.toString().toUpperCase() === "O") {
+      isModalOpen.value = true
+      result.value = "O"
+      gameStore.incrementOWins()
+    } else if (squares.value.every((square) => square !== null)) {
+      isModalOpen.value = true
+      result.value = "DRAW"
+      gameStore.incrementDraw()
+    }
+  }, 700)
 })
 </script>
 
@@ -41,11 +59,11 @@ watchEffect(() => {
       <TicTacToe class="size-12" />
     </div>
     <div class="font-bold">
-      <span class="flex gap-2 px-4 py-1 rounded-lg text-3xl text-slate-300 uppercase">
-        <span class="pr-2">
+      <span class="flex items-center gap-2 px-4 py-1 rounded-lg text-3xl text-slate-300 uppercase">
+        <span class="text-2xl"><strong>Next Player</strong></span>
+        <span class="pl-2 text-green-200">
           <strong>{{ currentPlayer }}</strong>
         </span>
-        <span><strong>Turn</strong></span>
       </span>
     </div>
     <ButtonReset @click="CLickResetHandle" />
@@ -64,4 +82,5 @@ watchEffect(() => {
       </div>
     </div>
   </div>
+  <WinnerModal :value="result" :is-open="isModalOpen" :onClose="CloseModal" />
 </template>

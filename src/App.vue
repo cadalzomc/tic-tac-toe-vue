@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import Board from "./components/Board/Board.vue"
-import PlayerX from "./components/Player/Player.X.vue"
-import PlayerO from "./components/Player/Player.O.vue"
-import Ties from "./components/Player/Ties.vue"
+import PlayerX from "@/components/Record/Player.X.vue"
+import PlayerO from "@/components/Record/Player.O.vue"
+import Draw from "@/components/Record/Draw.vue"
 </script>
 
 <template>
@@ -12,7 +12,7 @@ import Ties from "./components/Player/Ties.vue"
         <Board />
         <div class="grid grid-cols-3 justify-between gap-3 mt-2">
           <PlayerX />
-          <Ties />
+          <Draw />
           <PlayerO />
         </div>
       </div>
