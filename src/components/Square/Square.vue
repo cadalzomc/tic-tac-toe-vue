@@ -2,7 +2,9 @@
 
 <template>
   <button @click="props.onClick" :class="getStyle(props.value)">
-    <component :is="inputValue(props.value)" />
+    <Transition name="icon-scale" appear>
+      <component :is="inputValue(props.value)" />
+    </Transition>
   </button>
 </template>
 
@@ -41,3 +43,24 @@ const inputValue = (value: string) => {
 const defaultStyle =
   "bg-green-400 m-1 shadow-md rounded-lg px-3 py-1 min-w-24 min-h-24 max-sm:min-w-20 max-sm:min-h-20 text-5xl font-bold"
 </script>
+
+<style scoped>
+.icon-scale-enter-active,
+.icon-scale-leave-active {
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.icon-scale-enter-from,
+.icon-scale-leave-to {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.icon-scale-enter-to,
+.icon-scale-leave-from {
+  opacity: 1;
+  transform: scale(1);
+}
+</style>
