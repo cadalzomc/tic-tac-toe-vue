@@ -3,7 +3,6 @@
 <script setup lang="ts">
 import Sad from "@/components/icons/Sad.vue"
 import Smiley from "@/components/icons/Smiley.vue"
-import { ref } from "vue"
 
 const props = defineProps<{
   isOpen: boolean
