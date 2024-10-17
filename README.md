@@ -3,7 +3,8 @@
 A simple and interactive Tic-Tac-Toe game built with Vue 3, Tailwind CSS, and Pinia for state management. This project demonstrates the use of modern frontend development technologies, including component-based architecture, state management with Pinia, and styling with Tailwind CSS.
 
 
-Features
+# Features
+
 🟢 Real-time game updates: Play against a friend in local multiplayer.
 
 🖼️ Responsive design: Fully responsive layout built with Tailwind CSS.
