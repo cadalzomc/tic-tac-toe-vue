@@ -5,9 +5,13 @@ A simple and interactive Tic-Tac-Toe game built with Vue 3, Tailwind CSS, and Pi
 
 Features
 🟢 Real-time game updates: Play against a friend in local multiplayer.
+
 🖼️ Responsive design: Fully responsive layout built with Tailwind CSS.
+
 🎮 Interactive UI: Seamless user experience with Vue 3.
+
 🗂️ State management: Manage game states easily with Pinia.
+
 ♻️ Replay: Restart the game without refreshing the page.
 
 
