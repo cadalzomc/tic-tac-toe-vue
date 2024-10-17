@@ -35,7 +35,10 @@ npm run dev
 ```
 
 # Technologies
-Vue 3: A progressive JavaScript framework for building user interfaces.
-Pinia: A lightweight store for Vue applications, used for managing game state.
-Tailwind CSS: A utility-first CSS framework for rapid UI development.
-Vite: A fast and lean build tool for modern web projects.
+1. Vue 3: A progressive JavaScript framework for building user interfaces.
+
+2. Pinia: A lightweight store for Vue applications, used for managing game state.
+
+3. Tailwind CSS: A utility-first CSS framework for rapid UI development.
+
+4. Vite: A fast and lean build tool for modern web projects.
