@@ -41,3 +41,6 @@ npm run dev
 3. Tailwind CSS: A utility-first CSS framework for rapid UI development.
 
 4. Vite: A fast and lean build tool for modern web projects.
+
+# License
+This project is licensed under the GPL-3.0 license. See the LICENSE file for details.
