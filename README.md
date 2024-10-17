@@ -1,35 +1,41 @@
-# Tic-Tac-Toe
+# Tic-Tac-Toe Game 🕹️
 
-A simple game built with vue 3 / vue.js
+A simple and interactive Tic-Tac-Toe game built with Vue 3, Tailwind CSS, and Pinia for state management. This project demonstrates the use of modern frontend development technologies, including component-based architecture, state management with Pinia, and styling with Tailwind CSS.
 
-Current Features:
 
-## Project Setup
+Features
+🟢 Real-time game updates: Play against a friend in local multiplayer.
+🖼️ Responsive design: Fully responsive layout built with Tailwind CSS.
+🎮 Interactive UI: Seamless user experience with Vue 3.
+🗂️ State management: Manage game states easily with Pinia.
+♻️ Replay: Restart the game without refreshing the page.
+### Lint with [ESLint](https://eslint.org/)
 
-```sh
+
+# Installation
+To get started, clone this repository and install the required dependencies.
+
+# Prerequisites
+Node.js (version 16 or above)
+npm or yarn
+
+# Clone the repository
+```bash
+# Clone this repository to your local environment
+git clone https://github.com/cadalzomc/tic-tac-toe-vue.git
+
+# move in to your local site folder
+cd tic-tac-toe-vue
+
+# install the dependencies
 npm install
-```
 
-### Compile and Hot-Reload for Development
-
-```sh
+# Start the development server
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+# Technologies
+Vue 3: A progressive JavaScript framework for building user interfaces.
+Pinia: A lightweight store for Vue applications, used for managing game state.
+Tailwind CSS: A utility-first CSS framework for rapid UI development.
+Vite: A fast and lean build tool for modern web projects.
