@@ -9,7 +9,6 @@ Features
 🎮 Interactive UI: Seamless user experience with Vue 3.
 🗂️ State management: Manage game states easily with Pinia.
 ♻️ Replay: Restart the game without refreshing the page.
-### Lint with [ESLint](https://eslint.org/)
 
 
 # Installation
